@@ -18,14 +18,13 @@ btc_fed = 0.01 #Put in amount of BTC in acct. Round up.
 
 risk = 0.00013
 
-
-
-
-min_profit_per_trade = btc_fed*0.0002
+# DO NOT EDIT CODE BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
 
 import requests, json, time
 
 base_url = 'https://tradeogre.com/api/v1' # Base URL to add /XXXX to, doesn't return anything
+min_profit_per_trade = btc_fed*0.0002
+
 class TradeOgre:
 
 	def __init__(self, trade_ogre_api, trade_ogre_secret):
@@ -169,7 +168,7 @@ def evan_slave_buy_low(total=1):
 	'''
 	global trade_counter, bulk_trade_data, prev_buy
 
-	max_buy_amount = float(trade_ogre.get_bal('BTC')) * 80
+	max_buy_amount = float(trade_ogre.get_bal('BTC')) * 10
 
 	day_low = update_ave()[0]
 
@@ -362,6 +361,8 @@ def algo_two():
 
 
 if __name__ == '__main__':
+	'''
+	Litle user interface, no need until more algorithems are developed. Mostly cuz algo two SUKZ
 	while True:
 		choose_algo = input('Which algorithm do you want to use? Algo 1 is most popular. [1/2] ')
 		if choose_algo == '1':
@@ -370,3 +371,8 @@ if __name__ == '__main__':
 			algo_two()
 		else:
 			print('Only use 1 or 2.')
+	'''
+	
+	algo_one() # DO NOT USE ALGO 2
+
+
