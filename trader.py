@@ -168,7 +168,7 @@ def evan_slave_buy_low(total=1):
 	'''
 	global trade_counter, bulk_trade_data, prev_buy
 
-	max_buy_amount = float(trade_ogre.get_bal('BTC')) / binance.get_market_info()[1]['highPrice']
+	max_buy_amount = float(trade_ogre.get_bal('BTC')) / float(binance.get_market_info()[1]['highPrice'])
 
 	day_low = update_ave()[0]
 
